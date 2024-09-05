@@ -9,15 +9,15 @@ interface Props {
 
 }
 
-export const PrimaryButton = ({ label, onPress, onLongPress }: Props}) => {
+export const PrimaryButton = ({ label, onPress, onLongPress }: Props) => {
     return (
         <Pressable
             onPress={() => onPress && onPress()}
-            onLongPress={() => onLongPress && onLongPress}>
+            onLongPress={() => onLongPress && onLongPress()}
             style={({ pressed }) => [
                 styler.button,
                 pressed && styler.buttonPressed
-            ]}
+            ]}>
             <Text style={{
                 color: Platform.OS === 'android' ? 'white' : '#4746ab'
             }}>{label}</Text>
